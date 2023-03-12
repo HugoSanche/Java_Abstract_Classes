@@ -1,4 +1,4 @@
-public class Dog extends  Animal{
+public class Dog extends  Mammal{
     private  String earShape;
     private String tailShape;
 
@@ -21,5 +21,8 @@ public class Dog extends  Animal{
             System.out.println("Cry, Cry");
         }
             System.out.println("Guauu Guauuu");
+    }
+    public void sheHair(){
+        System.out.println(getExplicitType()+" Shed Hair all the time");
     }
 }

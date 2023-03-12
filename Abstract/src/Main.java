@@ -14,8 +14,15 @@ public class Main {
 
         listAnimals.add(new Cat("Siamese","Small",5.00));
 
-        for (var l: listAnimals){
-                doStuff(l);
+        listAnimals.add(new Horse("Andalusian","Height",2000));
+
+        for (var typeOfAnimal: listAnimals){
+                doStuff(typeOfAnimal);
+                //check currentMammal it's a temporaty variable
+                if (typeOfAnimal instanceof Mammal currentMammal){
+                    currentMammal.sheHair();
+                   // typeOfAnimal.sheHair(); error
+                }
         }
     }
     public static void doStuff(Animal animal){
