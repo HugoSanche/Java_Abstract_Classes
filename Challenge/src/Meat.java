@@ -14,4 +14,13 @@ public class Meat extends ProductForSale {
                                 
                 """, type, price, description);
     }
+
+    @Override
+    public String toString() {
+        return "Meat{" +
+                "type='" + getClass().getName() + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

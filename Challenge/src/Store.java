@@ -2,29 +2,49 @@ import java.util.ArrayList;
 
 public class Store {
     public static void main(String[] args) {
-        ArrayList<ProductForSale> items =new ArrayList<>();
+        ArrayList<ProductForSale> itemsProducts =new ArrayList<>();
         SeaFood  shrimp=new SeaFood("Shrimp",180.00,"Shrimp of Mexico");
         SeaFood   salmon=new SeaFood("Salmon",220.00,"salmon of Noruego");
         SeaFood   filapia=new SeaFood("Filapia",100.00,"Filapia blanco");
 
-        Meat  pork=new Meat("pork",173.50,"Pork of Mexico");
+        Meat  pork=new Meat("Pork",173.50,"Pork of Mexico");
         Meat  chicken=new Meat("Chicken",110.00,"Chicken grange");
         Meat  beef=new Meat("Beef",187.50,"Beef of EU");
 
-        items.add(shrimp);
-        items.add(salmon);
-        items.add(filapia);
+        itemsProducts.add(shrimp);
+        itemsProducts.add(salmon);
+        itemsProducts.add(filapia);
 
-        items.add(pork);
-        items.add(chicken);
-        items.add(beef);
+        itemsProducts.add(pork);
+        itemsProducts.add(chicken);
+        itemsProducts.add(beef);
 
-        Orde
+        ArrayList<OrderItem> orderHugo=new ArrayList<>();
+
+        addItems(orderHugo,5,pork);
+        addItems(orderHugo,3,chicken);
+        addItems(orderHugo,1,beef);
+        addItems(orderHugo,2,salmon);
+
+        printItems(orderHugo);
+
     }
-    public static void addItems(){
-
+    public static void addItems(ArrayList<OrderItem> orderListUser, int quantity, ProductForSale productForSale){
+        OrderItem itemsToBuy=new OrderItem(quantity,productForSale);
+        orderListUser.add(itemsToBuy);
     }
-    public static  void printItems(){
+    public static  void printItems(ArrayList<OrderItem> list){
+        System.out.println("Product\t Quantity\tPrice\tTotal");
+        double total=0.00;
+        for ( var listProducts:list){
 
-    }
+           // System.out.println(listProducts);
+            //if(listProducts instanceof ProductForSale currentItem);
+            listProducts.productForSale().printPriceItem(listProducts.quantity());
+            total=total+listProducts.productForSale().getSalesPrice(listProducts.quantity());
+            listProducts.productForSale().details();
+            }
+        System.out.println("Total \t\t\t\t\t\t"+total);
+        }
 }
+

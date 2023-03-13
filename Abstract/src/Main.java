@@ -23,6 +23,7 @@ public class Main {
                     currentMammal.sheHair();
                    // typeOfAnimal.sheHair(); error
                 }
+
         }
     }
     public static void doStuff(Animal animal){

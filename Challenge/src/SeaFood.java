@@ -16,4 +16,12 @@ public class SeaFood extends ProductForSale{
                 """,type,price,description);
     }
 
+    @Override
+    public String toString() {
+        return "SeaFood{" +
+                "type='" + getClass().getName() + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
