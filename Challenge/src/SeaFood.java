@@ -9,11 +9,12 @@ public class SeaFood extends ProductForSale{
     @Override
     public void details() {
         System.out.printf("""
+                Product = %s
                 Type = %s
                 Price = $%10.2f 
                 Description = %s
                 
-                """,type,price,description);
+                """,getClass().getName(),type,price,description);
     }
 
     @Override

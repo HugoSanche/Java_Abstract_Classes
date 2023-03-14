@@ -19,6 +19,8 @@ public class Store {
         itemsProducts.add(chicken);
         itemsProducts.add(beef);
 
+        printListOfProducts(itemsProducts);
+
         ArrayList<OrderItem> orderHugo=new ArrayList<>();
 
         addItems(orderHugo,5,pork);
@@ -34,17 +36,21 @@ public class Store {
         orderListUser.add(itemsToBuy);
     }
     public static  void printItems(ArrayList<OrderItem> list){
-        System.out.println("Product\t Quantity\tPrice\tTotal");
+       // System.out.println("Product\t Quantity\tPrice\tTotal");
         double total=0.00;
         for ( var listProducts:list){
-
-           // System.out.println(listProducts);
-            //if(listProducts instanceof ProductForSale currentItem);
             listProducts.productForSale().printPriceItem(listProducts.quantity());
             total=total+listProducts.productForSale().getSalesPrice(listProducts.quantity());
-            listProducts.productForSale().details();
             }
-        System.out.println("Total \t\t\t\t\t\t"+total);
+        System.out.printf("Total %-50s",total);
         }
+
+
+    public static void printListOfProducts(ArrayList<ProductForSale> product){
+        for(var list:product) {
+            System.out.println("*".repeat(50));
+            list.details();
+        }
+    }
 }
 

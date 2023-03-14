@@ -14,9 +14,9 @@ public abstract class ProductForSale {
         return quantity*price;
     }
     public void printPriceItem(int quantity){
-        //System.out.printf("Type %s Quantity %d price $%10.2f %n ",type,quantity,price)
+        System.out.printf("Quantity  %d price $%8.2f   %s Type %-15s %-35s %n",quantity,price,getSalesPrice(quantity),type,description);
 
-        System.out.println(type+"\t\t"+quantity+"\t\t"+price+"\t"+getSalesPrice(quantity));
+       // System.out.println(type+"\t\t"+quantity+"\t\t"+price+"\t"+getSalesPrice(quantity));
     }
     public abstract void details();
 }
